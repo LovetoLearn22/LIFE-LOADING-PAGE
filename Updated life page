@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life_Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="IMAGES/KIKO%20FOTO.jpg" type="image/x-icon">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background: url('IMAGES/LIFE/world-map-5.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #cloud-intro {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('IMAGES/LIFE/1.png') 0 200px,
+      url('IMAGES/LIFE/2.png') 0 300px,
+      url('IMAGES/LIFE/3.png') 100px 250px;
+      animation: wind 20s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .breadcrumb {
+      font-size: 16px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #313133;
+      background-color: rgba(129,230,217,1);
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .breadcrumb a {
+      color: #313133;
+      text-decoration: none;
+      padding: 0 5px;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+      color: #313133;
+    }
+
+    .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      z-index: 3;
+    }
+
+    .button {
+      min-width: 300px;
+      min-height: 60px;
+      display: inline-flex;
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+      color: #313133;
+      background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+      border: none;
+      border-radius: 1000px;
+      box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      padding: 10px;
+      z-index: 3;
+    }
+
+    .button::before {
+      content: '';
+      border-radius: 1000px;
+      min-width: calc(300px + 12px);
+      min-height: calc(60px + 12px);
+      border: 6px solid #00FFCB;
+      box-shadow: 0 0 60px rgba(0,255,203,.64);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all .3s ease-in-out;
+      z-index: 1;
+    }
+
+    .button:hover,
+    .button:focus {
+      color: #313133;
+      transform: translateY(-6px);
+    }
+
+    .button:hover::before,
+    .button:focus::before {
+      opacity: 1;
+    }
+
+    .button::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      border: 6px solid #00FFCB;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ring 1.5s infinite;
+      z-index: 1;
+    }
+
+    .button:hover::after,
+    .button:focus::after {
+      animation: none;
+      display: none;
+    }
+
+    @keyframes ring {
+      0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+      100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes wind {
+      0% {
+        background-position: 0 200px, 0 300px, 100px 250px;
+      }
+      100% {
+        background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <div class="breadcrumb">
+    <a href="about_me.html">About</a> &gt;
+    <a href="Life_Page.html">Life</a>
+  </div>
+
+  <div id="cloud-intro"></div>
+
+  <div class="wrap">
+    <button class="button">DISCOVER</button>
+  </div>
+</div>
+
+</body>
+</html>
